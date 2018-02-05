@@ -57,4 +57,14 @@
         }
         request.send(null);
     }
+    vm.functions = [
+        "Testfunctie 1",
+        "Testfunctie 2",
+        "Testfunctie 3"
+    ];
+    vm.groupes = [
+        "Testgroep 1",
+        "Testgroep 2",
+        "Testgroep 3"
+    ];
 }]);

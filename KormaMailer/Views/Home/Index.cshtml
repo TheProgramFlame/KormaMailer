@@ -23,8 +23,9 @@
             <select class="col-md-6" ng-model="mail.groupes" ng-options="group for group in groupes"></select>
         </div>
         <div class="dateSelect col-md-12">
-            <label class="col-md-8">Datum inschrijving: </label>
-            <select class="col-md-4" ng-model="mail.user.date" ng-options="date for date in dates"></select>
+            <md-content ng-controller="DateCtrl as ctrl">
+                <h4>Date-picker with min date and max date</h4>
+                <md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date" md-min-date="ctrl.minDate" md-max-date="ctrl.maxDate"></md-datepicker>
         </div>
         <div class="col-md-12">
             <p class="button">Zoek</p>
@@ -49,7 +50,7 @@
                     <p>Datum send</p>
                     <input ng-model="mailsettings.datumSend" type="text"/>
                 </div>
-                <div class="col-md-6 mail-onderwerp" >
+                <div class="col-md-6 mail-onderwerp">
                     <p>Onderwerp</p>
                     <input ng-model="mailsettings.onderwerp" type="text" />
                 </div>
@@ -86,7 +87,7 @@
                         <li ng-repeat="document in documents">{{ document.name }}</li>
                     </ul>
                 </nav>
-                
+
             </div>
         </div>
     </div>
