@@ -3,6 +3,32 @@
     padding-bottom: 20px;
 }
 
+.lblAantal {
+    width:100%;
+    margin-top:15px;
+}
+
+.btn-outline-primary {
+    margin-top:15px;
+}
+
+.dateSelect {
+    margin-top: 15px;
+}
+
+.functionSelect {
+    margin-top:15px;
+}
+
+.container-body-content {
+    width:100%;
+    padding:15px;
+}
+
+.container-fluid-cat {
+    background-color:cadetblue;
+    color:white;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
