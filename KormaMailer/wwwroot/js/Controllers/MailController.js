@@ -25,6 +25,18 @@
         }
     };
 
+    vm.documents = [
+        {
+            naam: "document 1"
+        },
+        {
+            naam: "document 2"
+        },
+        {
+            naam: "document 3"
+        }
+    ];
+
     vm.LoadTemplate = function () {
         if (vm.mailsettings.template != null) {
             var url = 'Templates/Mail/' + vm.mailsettings.template + '.html';
