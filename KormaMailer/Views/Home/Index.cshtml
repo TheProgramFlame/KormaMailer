@@ -2,6 +2,34 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="header-buttons">
+    <button type="button" class="btn btn-outline-primary">Mailer</button>
+    <button type="button" class="btn btn-outline-primary">Templates</button>
+    <button type="button" class="btn btn-outline-primary">Historie</button>
+</div>
+<hr />
+<div class="col-md-2">
+    <div class="col-md-6"><input type="radio"> Personeel</div>
+    <div class="col-md-6"><input type="radio"> Excel</div>
+    <div class="functionSelect col-md-12">
+        <label class="col-md-4">Functie: </label>
+        <select class="col-md-8" ng-model="mail.user.function" ng-options="function for function in functions"></select>
+    </div>
+    <div class="dateSelect col-md-12">
+        <label class="col-md-4">Datum: </label>
+        <select class="col-md-8" ng-model="mail.user.date" ng-options="date for date in dates"></select>
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-outline-primary">Zoek</button>
+        <label class="lblAantal">Aantal: </label>
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-outline-primary">Voeg toe aan selectie</button>
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-outline-primary">Verstuur mailing</button>
+    </div>
+</div>
 <div class="row" ng-controller="MailController">
     <div class="col-md-10 mail-gegevens">
         <div class="col-md-12 editor-header">
