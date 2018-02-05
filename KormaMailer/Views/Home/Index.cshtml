@@ -2,10 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="header-buttons">
-    <button type="button" class="btn btn-outline-primary">Mailer</button>
-    <button type="button" class="btn btn-outline-primary">Templates</button>
-    <button type="button" class="btn btn-outline-primary">Historie</button>
+<div class="header-buttons col-md-12">
+    <p class="button col-md-1" ng-click="LoadMailer()">Mailer</p>
+    <p class="button col-md-1" ng-click="LoadTemplates()">Templates</p>
+    <p class="button col-md-1" ng-click="LoadHistorie()">Historie</p>
 </div>
 <hr />
 <div class="row" ng-controller="MailController">
@@ -17,18 +17,22 @@
             <select class="col-md-8" ng-model="mail.user.function" ng-options="function for function in functions"></select>
         </div>
         <div class="dateSelect col-md-12">
+            <label class="col-md-6">Systeemgroep: </label>
+            <select class="col-md-6" ng-model="mail.groupes" ng-options="group for group in groupes"></select>
+        </div>
+        <div class="dateSelect col-md-12">
             <label class="col-md-4">Datum: </label>
             <select class="col-md-8" ng-model="mail.user.date" ng-options="date for date in dates"></select>
         </div>
         <div class="col-md-12">
-            <button type="button" class="btn btn-outline-primary">Zoek</button>
+            <p class="button">Zoek</p>
             <label class="lblAantal">Aantal: </label>
         </div>
         <div class="col-md-12">
-            <button type="button" class="btn btn-outline-primary">Voeg toe aan selectie</button>
+            <p class="button">Voeg toe aan selectie</p>
         </div>
         <div class="col-md-12">
-            <button type="button" class="btn btn-outline-primary">Verstuur mailing</button>
+            <p class="button">Verstuur mailing</p>
         </div>
     </div>
     <div class="col-md-10 mail-gegevens">
