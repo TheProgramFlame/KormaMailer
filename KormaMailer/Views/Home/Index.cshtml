@@ -30,3 +30,58 @@
         <button type="button" class="btn btn-outline-primary">Verstuur mailing</button>
     </div>
 </div>
+<div class="row" ng-controller="MailController">
+    <div class="col-md-10 mail-gegevens">
+        <div class="col-md-12 editor-header">
+            <div class="col-md-4">
+                <p>Template</p>
+                <select ng-model="mail.templates" ng-options="template for template in templates"></select>
+                <p class="button" ng-click="LoadTemplate()">Laad template</p>
+            </div>
+            <div class="col-md-4 mail-verzend-gegevens">
+                <div class="col-md-6 mail-datum">
+                    <p>Datum send</p>
+                    <input ng-model="mail.datum" type="text"/>
+                </div>
+                <div class="col-md-6 mail-onderwerp" >
+                    <p>Onderwerp</p>
+                    <input ng-model="mail.onderwerp" type="text" />
+                </div>
+                <div class="col-md-12 mail-verzender">
+                    <input ng-model="mail.sender" type="text" placeholder="Verzender..." />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p>Antwoord naar</p>
+                <input type="text" ng-model="mail.templates"/>
+                <p class="button col-md-6" ng-click="SendMail()">Verstuur email</p>
+                <p class="button col-md-6" ng-click="SaveTemplate()">Opslaan als template</p>
+            </div>
+        </div>
+        <div class="col-md-12 divider">
+            <hr />
+        </div>
+        <div class="col-md-12 editor-body">
+            <div class="col-md-8 mail-editor">
+                <textarea name="editor" id="editor" rows="10" cols="80"></textarea>
+                <script type="text/javascript">
+                    CKEDITOR.replace('editor');
+                </script>
+            </div>
+            <div class="col-md-4">
+                <p class="button" ng-click="PlaceHyperlinkg()">Plaats doc als hyperlink</p>
+                <h4>Upload nieuw document</h4>
+                <input type="file" />
+                <h4>Upload bestaand document</h4>
+                <p class="button col-md-6" ng-click="PlaceDocument()">Plaats document</p>
+                <p class="button col-md-6" ng-click="RemoveDocument()">Wissen</p>
+                <nav class="mail-documents">
+                    <ul>
+                        <li ng-repeat="document in documents">{{ document.name }}</li>
+                    </ul>
+                </nav>
+                
+            </div>
+        </div>
+    </div>
+</div>

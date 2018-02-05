@@ -34,6 +34,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    width: 100%;
 }
 
 /* Carousel */
@@ -50,6 +51,40 @@
 /* QR code generator */
 #qrCode {
     margin: 15px;
+}
+
+.mail-gegevens input,
+.mail-gegevens select {
+    width:100%;
+    margin-bottom:5px
+}
+
+.mail-gegevens p {
+    margin-bottom:5px;
+}
+
+.divider {
+    padding:5px 0 10px 0;
+}
+
+p.button {
+    border: 1px solid #eee;
+    padding: 5px;
+    text-align:center;
+    transition:0.5s;
+    -webkit-transition:0,5s;
+}
+
+p.button:hover {
+    background:#eee;
+    cursor:pointer;
+}
+
+nav.mail-documents ul {
+    height:250px;
+    width:100%;
+    overflow:hidden;
+    overflow-y: scroll;
 }
 
 /* Hide/rearrange for smaller screens */

@@ -12,4 +12,53 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\.DS_Store" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\._.DS_Store" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-animate.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-animate.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-animate.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-aria.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-aria.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-aria.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-cookies.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-cookies.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-cookies.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-csp.css" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-loader.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-loader.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-loader.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-message-format.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-message-format.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-message-format.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-messages.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-messages.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-messages.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-mocks.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-parse-ext.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-parse-ext.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-parse-ext.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-resource.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-resource.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-resource.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-route.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-route.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-route.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-sanitize.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-sanitize.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-sanitize.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-scenario.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-touch.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-touch.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular-touch.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular.min.js" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\angular.min.js.map" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\errors.json" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\version.json" />
+    <Content Remove="wwwroot\Scripts\Angular\core_scripts\Angular\version.txt" />
+  </ItemGroup>
 </Project>
