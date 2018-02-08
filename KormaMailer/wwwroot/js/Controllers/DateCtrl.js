@@ -1,4 +1,5 @@
-﻿app.controller('DateCtrl', function () {
+﻿
+app.controller('DateCtrl', function () {
     this.myDate = new Date();
 
     this.minDate = new Date(

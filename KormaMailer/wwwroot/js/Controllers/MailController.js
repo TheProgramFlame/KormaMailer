@@ -7,6 +7,19 @@
         "template3"
     ];
 
+    vm.user = [
+        functions = [
+            "Testfunctie 1",
+            "Testfunctie 2",
+            "Testfunctie 3"
+        ],
+        groupes = [
+            "Testgroep 1",
+            "Testgroep 2",
+            "Testgroep 3"
+        ]
+    ];
+
     vm.mailsettings = {
         template: null,
         datumSend: null,
@@ -46,6 +59,8 @@
             if (messageContent != "") {
                 vm.mailsettings.contents.message = messageContent;
 
+                console.log(vm.mailsettings);
+
                 CKEDITOR.instances.editor.setData(messageContent, function () {
                     this.checkDirty(true);
                 });
@@ -55,6 +70,12 @@
         }
     };
 
+    vm.uploadFile = function(files) {
+        var fd = new FormData();
+        fd.append("file", files[0]);
+
+        console.log(fd);
+    };
 
     function readTemplate(url) {
         var request = new XMLHttpRequest();
@@ -68,15 +89,24 @@
             }
         }
         request.send(null);
+    };
+}]);
+
+app.directive("fileread", [function () {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = loadEvent.target.result;
+                    });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
     }
-    vm.functions = [
-        "Testfunctie 1",
-        "Testfunctie 2",
-        "Testfunctie 3"
-    ];
-    vm.groupes = [
-        "Testgroep 1",
-        "Testgroep 2",
-        "Testgroep 3"
-    ];
 }]);
