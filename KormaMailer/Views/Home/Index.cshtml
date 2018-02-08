@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<script src="~/js/app.js"></script>
+<script src="~/js/Controllers/MailController.js"></script>
 
 <div class="header-buttons col-md-12">
     <p class="button col-md-1" ng-click="LoadMailer()">Mailer</p>
@@ -13,16 +15,14 @@
         <div class="col-md-6"><input type="radio"> Personeel</div>
         <div class="col-md-6"><input type="radio"> Excel</div>
         <div class="functionSelect col-md-12">
-            <label class="col-md-4">Functie: </label>
-            <select class="col-md-8" ng-model="mail.user.function" ng-options="function for function in functions"></select>
+            <label>Functie: </label>
+            <select ng-model="users.function" ng-options="function for function in functions"></select>
         </div>
         <div class="dateSelect col-md-12">
-            <label class="col-md-6">Systeemgroep: </label>
-            <select class="col-md-6" ng-model="mail.groupes" ng-options="group for group in groupes"></select>
+            <label>Systeemgroep: </label>
+            <select ng-model="user.groupes" ng-options="group for group in groupes"></select>
         </div>
         <div class="dateSelect col-md-12">
-            <label class="col-md-8">Datum inschrijving: </label>
-            <select class="col-md-4" ng-model="mail.user.date" ng-options="date for date in dates"></select>
         </div>
         <div class="col-md-12">
             <p class="button">Zoek</p>
@@ -39,25 +39,25 @@
         <div class="col-md-12 editor-header">
             <div class="col-md-4">
                 <p>Template</p>
-                <select ng-model="mail.templates" ng-options="template for template in templates"></select>
+                <select ng-model="mailsettings.template" ng-options="template for template in templates"></select>
                 <p class="button" ng-click="LoadTemplate()">Laad template</p>
             </div>
             <div class="col-md-4 mail-verzend-gegevens">
                 <div class="col-md-6 mail-datum">
                     <p>Datum send</p>
-                    <input ng-model="mail.datum" type="text"/>
+                    <input ng-model="mailsettings.datumSend" type="text"/>
                 </div>
-                <div class="col-md-6 mail-onderwerp" >
+                <div class="col-md-6 mail-onderwerp">
                     <p>Onderwerp</p>
-                    <input ng-model="mail.onderwerp" type="text" />
+                    <input ng-model="mailsettings.onderwerp" type="text" />
                 </div>
                 <div class="col-md-12 mail-verzender">
-                    <input ng-model="mail.sender" type="text" placeholder="Verzender..." />
+                    <input ng-model="mailsettings.verzender" type="text" placeholder="Verzender..." />
                 </div>
             </div>
             <div class="col-md-4">
                 <p>Antwoord naar</p>
-                <input type="text" ng-model="mail.templates"/>
+                <input type="text" ng-model="mailsettings.antwoord"/>
                 <p class="button col-md-6" ng-click="SendMail()">Verstuur email</p>
                 <p class="button col-md-6" ng-click="SaveTemplate()">Opslaan als template</p>
             </div>
@@ -67,27 +67,25 @@
         </div>
         <div class="col-md-12 editor-body">
             <div class="col-md-8 mail-editor">
-                <textarea name="editor" id="editor" rows="10" cols="80"></textarea>
+                <textarea ng-model="mailsettings.contents.message" name="editor" id="editor" rows="10" cols="80"></textarea>
                 <script type="text/javascript">
                     CKEDITOR.replace('editor');
                 </script>
             </div>
             <div class="col-md-4">
-                <p class="button" ng-click="PlaceHyperlinkg()">Plaats doc als hyperlink</p>
+                <p class="button" ng-click="PlaceHyperlink()">Plaats doc als hyperlink</p>
                 <h4>Upload nieuw document</h4>
-                <input type="file" />
+                <input type="file" fileread="mailsettings.contents.files"/>
                 <h4>Upload bestaand document</h4>
                 <p class="button col-md-6" ng-click="PlaceDocument()">Plaats document</p>
                 <p class="button col-md-6" ng-click="RemoveDocument()">Wissen</p>
                 <nav class="mail-documents">
                     <ul>
-                        <li ng-repeat="document in documents">{{ document.name }}</li>
+                        <li ng-repeat="document in documents">{{ document.naam }}</li>
                     </ul>
                 </nav>
-                
+
             </div>
         </div>
     </div>
 </div>
-<script src="~/js/app.js"></script>
-<script src="~/js/Controllers/MailController.js"></script>
